@@ -1,29 +1,48 @@
 import { Buttons } from "./components";
+import { FaDatabase } from "react-icons/fa";
 function App() {
   return (
     <>
       <div>
-        <Buttons>Plain</Buttons>
+        <Buttons plain>
+          <FaDatabase />
+          Plain
+        </Buttons>
       </div>
 
       <div>
-        <Buttons>Primary</Buttons>
+        <Buttons primary>
+          <FaDatabase />
+          Primary
+        </Buttons>
       </div>
 
       <div>
-        <Buttons>Secondary</Buttons>
+        <Buttons secondary rounded outline>
+          <FaDatabase />
+          Secondary
+        </Buttons>
       </div>
 
       <div>
-        <Buttons>Success</Buttons>
+        <Buttons success outline>
+          <FaDatabase />
+          Success
+        </Buttons>
       </div>
 
       <div>
-        <Buttons>Warning</Buttons>
+        <Buttons warning>
+          <FaDatabase />
+          Warning
+        </Buttons>
       </div>
 
       <div>
-        <Buttons>Danger</Buttons>
+        <Buttons danger outline>
+          <FaDatabase />
+          Danger
+        </Buttons>
       </div>
     </>
   );
