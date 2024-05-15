@@ -12,14 +12,14 @@ function App() {
   return (
     <>
       <div>
-        <Button plain onClick={handleClick}>
+        <Button plain onClick={handleClick} className="my-2">
           <FaDatabase />
           Plain
         </Button>
       </div>
 
       <div>
-        <Button primary onMouseEnter={handleMouseEnter}>
+        <Button primary onMouseEnter={handleMouseEnter} className="my-4">
           <FaDatabase />
           Primary
         </Button>
