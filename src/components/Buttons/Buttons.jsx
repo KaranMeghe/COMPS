@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { twMerge } from "tailwind-merge";
 
-const Buttons = ({
+const Button = ({
   children,
   plain,
   primary,
@@ -33,7 +33,7 @@ const Buttons = ({
   return <button className={classes}>{children}</button>;
 };
 
-Buttons.propTypes = {
+Button.propTypes = {
   checkVariationValue: ({
     plain,
     primary,
@@ -61,4 +61,4 @@ Buttons.propTypes = {
   },
 };
 
-export default Buttons;
+export default Button;
