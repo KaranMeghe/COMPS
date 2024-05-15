@@ -1,17 +1,25 @@
 import { Button } from "./components";
 import { FaDatabase } from "react-icons/fa";
 function App() {
+  const handleClick = () => {
+    console.log("Clicked You !!");
+  };
+
+  const handleMouseEnter = () => {
+    console.log("On Mouse Enter");
+  };
+
   return (
     <>
       <div>
-        <Button plain>
+        <Button plain onClick={handleClick}>
           <FaDatabase />
           Plain
         </Button>
       </div>
 
       <div>
-        <Button primary>
+        <Button primary onMouseEnter={handleMouseEnter}>
           <FaDatabase />
           Primary
         </Button>
@@ -39,7 +47,7 @@ function App() {
       </div>
 
       <div>
-        <Button danger outline>
+        <Button danger outline onClick={handleClick}>
           <FaDatabase />
           Danger
         </Button>

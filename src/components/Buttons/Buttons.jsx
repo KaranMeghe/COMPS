@@ -12,6 +12,7 @@ const Button = ({
   warning,
   rounded,
   outline,
+  ...rest
 }) => {
   const classes = twMerge(
     classNames("flex items-center px-3 py-1.5 border m-2", {
@@ -30,7 +31,11 @@ const Button = ({
       "text-red-500": outline && danger,
     })
   );
-  return <button className={classes}>{children}</button>;
+  return (
+    <button {...rest} className={classes}>
+      {children}
+    </button>
+  );
 };
 
 Button.propTypes = {
