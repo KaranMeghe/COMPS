@@ -1,9 +1,9 @@
-import { ButtonPage } from "./pages";
+import { AccordionPage } from "./pages";
 
 function App() {
   return (
     <>
-      <ButtonPage />
+      <AccordionPage />
     </>
   );
 }
