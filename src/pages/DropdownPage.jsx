@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Dropdown } from "../components";
 
 const DropdownPage = () => {
+  const [selection, setSelection] = useState(null);
+
+  const handleSelection = (option) => {
+    setSelection(option);
+  };
+
   const options = [
     { color: "red", value: "red" },
     { color: "orange", value: "orange" },
@@ -11,7 +18,11 @@ const DropdownPage = () => {
   ];
   return (
     <div>
-      <Dropdown options={options} />
+      <Dropdown
+        options={options}
+        value={selection}
+        onChange={handleSelection}
+      />
     </div>
   );
 };
