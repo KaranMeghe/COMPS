@@ -1,9 +1,9 @@
-import { AccordionPage } from "./pages";
+import { DropdownPage } from "./pages";
 
 function App() {
   return (
     <>
-      <AccordionPage />
+      <DropdownPage />
     </>
   );
 }
