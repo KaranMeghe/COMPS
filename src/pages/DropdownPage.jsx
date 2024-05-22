@@ -9,12 +9,12 @@ const DropdownPage = () => {
   };
 
   const options = [
-    { color: "red", value: "red" },
-    { color: "orange", value: "orange" },
-    { color: "yellow", value: "yellow" },
-    { color: "brown", value: "brown" },
-    { color: "green", value: "green" },
-    { color: "pink", value: "pink" },
+    { color: "Red", value: "red" },
+    { color: "Orange", value: "orange" },
+    { color: "Yellow", value: "yellow" },
+    { color: "Brown", value: "brown" },
+    { color: "Green", value: "green" },
+    { color: "Pink", value: "pink" },
   ];
   return (
     <div>
