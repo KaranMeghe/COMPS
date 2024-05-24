@@ -16,8 +16,15 @@ const DropdownPage = () => {
     { color: "Green", value: "green" },
     { color: "Pink", value: "pink" },
   ];
+
   return (
-    <div>
+    <div className="flex">
+      <Dropdown
+        options={options}
+        value={selection}
+        onChange={handleSelection}
+      />
+
       <Dropdown
         options={options}
         value={selection}
