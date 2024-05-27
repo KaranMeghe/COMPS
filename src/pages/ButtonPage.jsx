@@ -10,7 +10,7 @@ const ButtonPage = () => {
     console.log("On Mouse Enter");
   };
   return (
-    <>
+    <div className="flex items-baseline">
       <div>
         <Button plain onClick={handleClick} className="my-2">
           <FaDatabase />
@@ -47,7 +47,7 @@ const ButtonPage = () => {
           Danger
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 

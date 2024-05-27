@@ -21,12 +21,12 @@ const Accordion = ({ items }) => {
     );
 
     return (
-      <div key={item.id} className="w-[30%]">
+      <div key={item.id}>
         <div
           onClick={() => {
             handleClick(index);
           }}
-          className="flex justify-between p-3 bg-gray-50 border-b cursor-pointer"
+          className="flex justify-between p-3 bg-gray-50 border-b cursor-pointer "
         >
           <h3>{item.label}</h3>
           {icon}
@@ -41,7 +41,7 @@ const Accordion = ({ items }) => {
     );
   });
 
-  return <div className="border-x border-t">{renderItems}</div>;
+  return <div className="border-x border-t w-[70%] ">{renderItems}</div>;
 };
 
 export default Accordion;
