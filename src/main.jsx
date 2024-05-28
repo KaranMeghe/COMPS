@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AccordionPage, ButtonPage, DropdownPage } from "./pages";
+import { AccordionPage, ButtonPage, DropdownPage, ModalPage } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +12,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
+        element: <DropdownPage />,
+      },
+      {
+        path: "dropdown",
         element: <DropdownPage />,
       },
       ,
@@ -24,8 +28,8 @@ const router = createBrowserRouter([
         element: <AccordionPage />,
       },
       {
-        path: "dropdown",
-        element: <DropdownPage />,
+        path: "modal",
+        element: <ModalPage />,
       },
     ],
   },

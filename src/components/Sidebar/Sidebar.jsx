@@ -14,6 +14,7 @@ const Sidebar = () => {
         >
           <h3>Accordion</h3>
         </NavLink>
+
         <NavLink
           to="/buttons"
           className={({ isActive }) =>
@@ -24,6 +25,7 @@ const Sidebar = () => {
         >
           <h3>Buttons</h3>
         </NavLink>
+
         <NavLink
           to="/dropdown"
           className={({ isActive }) =>
@@ -34,8 +36,9 @@ const Sidebar = () => {
         >
           <h3>Dropdown</h3>
         </NavLink>
+
         <NavLink
-          to="/accordion"
+          to="/modal"
           className={({ isActive }) =>
             `p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer ${
               isActive ? "text-gray-700" : "text-white"
