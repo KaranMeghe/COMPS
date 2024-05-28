@@ -11,6 +11,11 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: "",
+        element: <DropdownPage />,
+      },
+      ,
+      {
         path: "buttons",
         element: <ButtonPage />,
       },

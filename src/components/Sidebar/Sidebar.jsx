@@ -1,33 +1,49 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <aside className="h-[100vh]">
       <div className="flex flex-col h-full justify-center bg-blue-400 text-white w-32 ">
-        <Link
+        <NavLink
           to="/accordion"
-          className="p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer"
+          className={({ isActive }) =>
+            `p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer ${
+              isActive ? "text-gray-700" : "text-white"
+            } hover:bg-gray-50  hover:text-gray-700`
+          }
         >
           <h3>Accordion</h3>
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/buttons"
-          className="p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer"
+          className={({ isActive }) =>
+            `p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer ${
+              isActive ? "text-gray-700" : "text-white"
+            } hover:bg-gray-50  hover:text-gray-700`
+          }
         >
-          <h3> Button</h3>
-        </Link>
-        <Link
+          <h3>Buttons</h3>
+        </NavLink>
+        <NavLink
           to="/dropdown"
-          className="p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer"
+          className={({ isActive }) =>
+            `p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer ${
+              isActive ? "text-gray-700" : "text-white"
+            } hover:bg-gray-50  hover:text-gray-700`
+          }
         >
           <h3>Dropdown</h3>
-        </Link>
-        <Link
-          to="/modal"
-          className="p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer"
+        </NavLink>
+        <NavLink
+          to="/accordion"
+          className={({ isActive }) =>
+            `p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer ${
+              isActive ? "text-gray-700" : "text-white"
+            } hover:bg-gray-50  hover:text-gray-700`
+          }
         >
           <h3>Modal</h3>
-        </Link>
+        </NavLink>
       </div>
     </aside>
   );
