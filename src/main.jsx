@@ -3,7 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AccordionPage, ButtonPage, DropdownPage, ModalPage } from "./pages";
+import {
+  AccordionPage,
+  ButtonPage,
+  DropdownPage,
+  ModalPage,
+  TabelPage,
+} from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "modal",
         element: <ModalPage />,
+      },
+      {
+        path: "tabel",
+        element: <TabelPage />,
       },
     ],
   },

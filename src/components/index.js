@@ -4,5 +4,6 @@ import Dropdown from "./Dropdown/Dropdown";
 import Panel from "./Panel/Panel";
 import Sidebar from "./Sidebar/Sidebar";
 import Modal from "./Modal/Modal";
+import Tabel from "./Tabel/Tabel";
 
-export { Button, Accordion, Dropdown, Panel, Sidebar, Modal };
+export { Button, Accordion, Dropdown, Panel, Sidebar, Modal, Tabel };
