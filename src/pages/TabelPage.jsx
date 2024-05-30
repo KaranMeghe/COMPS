@@ -15,7 +15,11 @@ const TabelPage = () => {
       label: "Color",
       render: (fruit) => <div className={`m-2 p-2 ${fruit.color}`}></div>,
     },
-    { label: "Score", render: (fruit) => fruit.score },
+    {
+      label: "Score",
+      render: (fruit) => fruit.score,
+      header: () => <th className="bg-red-500 p-2 text-white">Score</th>,
+    },
     { label: "Fav", render: (fruit) => fruit.fav },
   ];
 
