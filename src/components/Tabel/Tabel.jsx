@@ -1,7 +1,33 @@
-import React from "react";
+const Tabel = ({ data, config, keyFn }) => {
+  const renderedHeadings = config.map((column) => {
+    return <th key={column.label}>{column.label}</th>;
+  });
 
-const Tabel = () => {
-  return <div>Tabel</div>;
+  const renderedRows = data.map((rowData) => {
+    const renderedCells = config.map((column) => {
+      return (
+        <td className="p-3" key={column.label}>
+          {column.render && column.render(rowData)}
+        </td>
+      );
+    });
+
+    return (
+      <tr key={keyFn(rowData)} className="border-b">
+        {renderedCells}
+      </tr>
+    );
+  });
+
+  return (
+    <table className="table-auto border-spacing-2">
+      <thead>
+        <tr className="border-b-2">{renderedHeadings}</tr>
+      </thead>
+
+      <tbody>{renderedRows}</tbody>
+    </table>
+  );
 };
 
 export default Tabel;
