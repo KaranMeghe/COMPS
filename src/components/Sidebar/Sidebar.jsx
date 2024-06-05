@@ -56,7 +56,7 @@ const Sidebar = () => {
             } hover:bg-gray-50  hover:text-gray-700`
           }
         >
-          <h3>Tabel</h3>
+          <h3>Table</h3>
         </NavLink>
       </div>
     </aside>

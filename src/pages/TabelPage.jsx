@@ -1,4 +1,4 @@
-import { Tabel } from "../components";
+import { SortableTable, Tabel } from "../components";
 
 const TabelPage = () => {
   const data = [
@@ -10,7 +10,11 @@ const TabelPage = () => {
   ];
 
   const config = [
-    { label: "Fruits", render: (fruit) => fruit.name },
+    {
+      label: "Fruits",
+      render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name,
+    },
     {
       label: "Color",
       render: (fruit) => <div className={`m-2 p-2 ${fruit.color}`}></div>,
@@ -18,16 +22,24 @@ const TabelPage = () => {
     {
       label: "Score",
       render: (fruit) => fruit.score,
-      header: () => <th className="bg-red-500 p-2 text-white">Score</th>,
+      sortValue: (fruit) => fruit.score,
     },
-    { label: "Fav", render: (fruit) => fruit.fav },
+    {
+      label: "Fav",
+      render: (fruit) => fruit.fav,
+    },
   ];
 
   const keyFn = (data) => data.name;
+  const hasSortValue = config.some((item) => "sortValue" in item);
 
   return (
     <section>
-      <Tabel data={data} config={config} keyFn={keyFn} />
+      {hasSortValue ? (
+        <SortableTable data={data} config={config} keyFn={keyFn} />
+      ) : (
+        <Tabel data={data} config={config} keyFn={keyFn} />
+      )}
     </section>
   );
 };
