@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+
 const Tabel = ({ data, config, keyFn }) => {
   const renderedHeadings = config.map((column) => {
     if (column.header) {

@@ -28,11 +28,11 @@ const SortableTable = (props) => {
     return {
       ...column,
       header: () => (
-        <th
-          onClick={() => handleClick(column.label)}
-          className="bg-red-500 p-2 text-white"
-        >
-          {column.label} is SortableTable
+        <th onClick={() => handleClick(column.label)}>
+          <div className="flex gap-2 items-center">
+            {getIcons(column.label, sortBy, sortOrder)}
+            {column.label}
+          </div>
         </th>
       ),
     };
@@ -57,10 +57,35 @@ const SortableTable = (props) => {
   }
   return (
     <div>
-      {sortBy} - {sortOrder}
       <Tabel {...props} data={sortedData} config={updatedConfig} />
     </div>
   );
+
+  function getIcons(label, sortBy, sortOrder) {
+    if (label !== sortBy) {
+      return (
+        <div>
+          <AiFillCaretUp /> <AiFillCaretDown />
+        </div>
+      );
+    }
+
+    if (sortOrder === null) {
+      return (
+        <div>
+          <AiFillCaretUp /> <AiFillCaretDown />
+        </div>
+      );
+    } else if (sortOrder === "asc") {
+      return (
+        <div>
+          <AiFillCaretUp />
+        </div>
+      );
+    } else if (sortOrder === "dsc") {
+      return <AiFillCaretDown />;
+    }
+  }
 };
 
 export default SortableTable;
