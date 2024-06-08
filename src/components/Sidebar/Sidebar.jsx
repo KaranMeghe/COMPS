@@ -58,6 +58,17 @@ const Sidebar = () => {
         >
           <h3>Table</h3>
         </NavLink>
+
+        <NavLink
+          to="/counter"
+          className={({ isActive }) =>
+            `p-2 text-2xl border border-x-0 border-t-0 border-white cursor-pointer ${
+              isActive ? "text-gray-700" : "text-white"
+            } hover:bg-gray-50  hover:text-gray-700`
+          }
+        >
+          <h3>Counter</h3>
+        </NavLink>
       </div>
     </aside>
   );

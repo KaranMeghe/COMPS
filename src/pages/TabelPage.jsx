@@ -34,12 +34,14 @@ const TabelPage = () => {
   const hasSortValue = config.some((item) => "sortValue" in item);
 
   return (
-    <section>
-      {hasSortValue ? (
+    <section className="flex gap-4 justify-center items-center">
+      {/* {hasSortValue ? (
         <SortableTable data={data} config={config} keyFn={keyFn} />
       ) : (
         <Tabel data={data} config={config} keyFn={keyFn} />
-      )}
+      )} */}
+      <SortableTable data={data} config={config} keyFn={keyFn} />
+      <Tabel data={data} config={config} keyFn={keyFn} />
     </section>
   );
 };
