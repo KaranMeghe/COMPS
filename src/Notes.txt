@@ -1,0 +1,14 @@
+Even though the input element is of type number, the onChange event still returns the value as a string. This is because the DOM element properties, including value, are always strings in HTML. The type of the input field (number, text, etc.) affects how the input is rendered and what kinds of values the user can enter, but it doesn't change the fact that the value property is a string.
+
+Here's how you can handle this properly in your code:
+
+Convert the input value to a number: When updating the state, you should convert the input value to a number.
+
+useReducer() : useReducer() is an alternative to useState().
+               Both hooks means to produce, change state.
+               when state get updated component get re-render. 
+               usually we are going to use either useState or useReducer in single component.
+
+               The diff between both hook is how we as devloper impliment state updating logic.
+               useReducer() is useful whenever we have multipule piece of state that closely related to each other. 
+               also when future state values depend on the current state.

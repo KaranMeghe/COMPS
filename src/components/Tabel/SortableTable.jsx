@@ -1,10 +1,13 @@
 import { Tabel } from "../index";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
-import useSort from "../../hooks/useSort";
+import { useSort } from "../../hooks";
 
 const SortableTable = (props) => {
   const { config, data } = props;
-  const { sortedData, sortBy, sortOrder, handleClick } = useSort(data, config);
+  const { sortedData, sortBy, sortOrder, setSortColumn } = useSort(
+    data,
+    config
+  );
 
   const updatedConfig = config.map((column) => {
     if (!column.sortValue) {
@@ -14,7 +17,7 @@ const SortableTable = (props) => {
       ...column,
       header: () => (
         <th
-          onClick={() => handleClick(column.label)}
+          onClick={() => setSortColumn(column.label)}
           className="cursor-pointer hover:bg-gray-100"
         >
           <div className="flex gap-2 items-center">
