@@ -1,30 +1,75 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import { Button, Panel } from "../components";
 
 const CounterPage = ({ initialCount }) => {
-  const [count, setCount] = useState(initialCount);
-  const [valueToAdd, setValueToAdd] = useState(0);
-  console.log(typeof count, typeof valueToAdd);
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "increment":
+        return {
+          ...state,
+          count: state.count + 1,
+        };
+
+      case "decrement":
+        return {
+          ...state,
+          count: state.count - 1,
+        };
+
+      case "changeInput":
+        return {
+          ...state,
+          valueToAdd: action.payload,
+        };
+
+      case "addToCount":
+        return {
+          ...state,
+          count: state.count + state.valueToAdd,
+          valueToAdd: 0,
+        };
+
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(reducer, {
+    count: initialCount,
+    valueToAdd: 0,
+  });
 
   const increment = () => {
-    return setCount(count + 1);
+    dispatch({
+      type: "increment",
+    });
   };
 
   const decrement = () => {
-    return setCount(count - 1);
+    dispatch({
+      type: "decrement",
+    });
+  };
+
+  const handleInputChange = (e) => {
+    const value = Number(e.target.value) || 0;
+    dispatch({
+      type: "changeInput",
+      payload: value,
+    });
   };
 
   const handleForm = (e) => {
     e.preventDefault();
-    const value = Number(e.target.value) || 0;
-    setValueToAdd(value);
-    setCount(count + Number(valueToAdd));
+    dispatch({
+      type: "addToCount",
+    });
   };
 
   return (
     <section>
       <Panel className="m-3">
-        <p>count value is : {count}</p>
+        <p>count value is : {state.count}</p>
         <div className="flex">
           <Button outline primary onClick={increment}>
             ++ Increment Count
@@ -40,8 +85,8 @@ const CounterPage = ({ initialCount }) => {
           <input
             type="number"
             className="p-1 m-3 bg-gray-50 border border-gray-300"
-            value={valueToAdd || ""}
-            onChange={(e) => setValueToAdd(e.target.value)}
+            value={state.valueToAdd || ""}
+            onChange={handleInputChange}
           />
           <Button outline primary>
             Add it

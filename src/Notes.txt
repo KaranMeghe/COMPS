@@ -12,3 +12,18 @@ useReducer() : useReducer() is an alternative to useState().
                The diff between both hook is how we as devloper impliment state updating logic.
                useReducer() is useful whenever we have multipule piece of state that closely related to each other. 
                also when future state values depend on the current state.
+
+     understanding Action Objects: 
+     Problem 🔴 : some issues with reducer(), in our application there are are many ways for user to interact.
+                 via increment,decrement button, by typing and submiting value. and we have to update our state. beacause we are using useReducer()
+                 we have to update our state by using dispatch(). when we call dispatch() reducer() get invoked. and the problem is when reducer() 
+                 runs only thing it knows 2 arguments (state, action). reducer() going to run but we dont know what state we are suppose to updating.  eg: we are calling dispatch() in either case [user clicks "increment" button, user types in input]. so how do we know if we call 
+                 the dispatch() as a result of [user clicks "increment" button or user types in input]. we need some way of telling the reducer why it is being executed and what piece of state it needs to update. 
+
+     Solution 🟢 : When we call "dispatch()", we need to pass along some information into the reducer to tell the reducer how the state should be updated.
+                  We need to tell reducer if it should update the count property or if it should update value to add. or exactly what property it should update. 
+
+                  whenever we are going to call dispatch(), for eg from event handler we are alwyas 100% of the time going to call dispatch({type:"count"}) with object which refer as action{} object. an action object is always going to have a type property that is string.
+                  That string in particular going to tell reducer what type of state it needs to update.
+                  if we need to communicate some data to reducer, it will be placed on the on the "payload" property of the action object.
+     
