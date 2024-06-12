@@ -1,28 +1,34 @@
 import { useReducer } from "react";
 import { Button, Panel } from "../components";
+import {
+  INCREMENT_COUNT,
+  DECREMENT_COUNT,
+  CHANGE_INPUT,
+  ADD_TO_INPUT,
+} from "../config";
 
 const CounterPage = ({ initialCount }) => {
   const reducer = (state, action) => {
     switch (action.type) {
-      case "increment":
+      case INCREMENT_COUNT:
         return {
           ...state,
           count: state.count + 1,
         };
 
-      case "decrement":
+      case DECREMENT_COUNT:
         return {
           ...state,
           count: state.count - 1,
         };
 
-      case "changeInput":
+      case CHANGE_INPUT:
         return {
           ...state,
           valueToAdd: action.payload,
         };
 
-      case "addToCount":
+      case ADD_TO_INPUT:
         return {
           ...state,
           count: state.count + state.valueToAdd,
@@ -41,20 +47,20 @@ const CounterPage = ({ initialCount }) => {
 
   const increment = () => {
     dispatch({
-      type: "increment",
+      type: INCREMENT_COUNT,
     });
   };
 
   const decrement = () => {
     dispatch({
-      type: "decrement",
+      type: DECREMENT_COUNT,
     });
   };
 
   const handleInputChange = (e) => {
     const value = Number(e.target.value) || 0;
     dispatch({
-      type: "changeInput",
+      type: CHANGE_INPUT,
       payload: value,
     });
   };
@@ -62,7 +68,7 @@ const CounterPage = ({ initialCount }) => {
   const handleForm = (e) => {
     e.preventDefault();
     dispatch({
-      type: "addToCount",
+      type: ADD_TO_INPUT,
     });
   };
 
