@@ -13,6 +13,18 @@ useReducer() : useReducer() is an alternative to useState().
                useReducer() is useful whenever we have multipule piece of state that closely related to each other. 
                also when future state values depend on the current state.
 
+               const [state, dispatch] = useReducer(reducer,initialState);
+
+               Lets familiarize ourselves with what the parameters mean:
+
+               ⭐️ state : represents the current value and is set to the initialState value during initial render.
+
+               ⭐️ dispatch: is a function that updates a state value and always trigger a re-render,   justlike the updater function in useState.
+
+               ⭐️ reducer: is a function that houses all the logic of how the state gets updated. it takes state and action as argument and returns the next state.
+
+               ⭐️ initialState: is the initial value can be any type.
+
      understanding Action Objects: 
      Problem 🔴 : some issues with reducer(), in our application there are are many ways for user to interact.
                  via increment,decrement button, by typing and submiting value. and we have to update our state. beacause we are using useReducer()
